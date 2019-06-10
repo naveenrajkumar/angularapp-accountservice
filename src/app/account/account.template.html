@@ -1,0 +1,29 @@
+<div class="alert alert-secondary" role="alert">
+
+    Account Listing
+  </div>
+<table class="table" >
+<thead>
+
+</thead>
+  <tr>
+    <th scope="col">Account Number</th>
+    <th scope="col">Account Name</th>
+    <th scope="col">Account Type</th>
+    <th scope="col">Account Currency</th>
+    <th scope="col">Avaialble Balance</th>
+
+  </tr>
+   <tbody>
+    <tr *ngFor="let account of accountsObservable | async " >
+      <th>
+         <a href="/accounts/{{account.accountNumber}}" >{{account.accountNumber}}</a>
+      </th>
+      <th>{{account.accountName}}</th>
+      <th>{{account.accountType}}</th>
+      <th>{{account.accountCurrency}}</th>
+      <th>{{account.availableBalance}}</th>
+    </tr>
+
+   </tbody>
+  </table>

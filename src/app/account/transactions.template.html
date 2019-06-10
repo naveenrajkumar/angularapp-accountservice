@@ -1,0 +1,36 @@
+<button type="button" class="btn btn-light"><a href="/accounts">AccountLIsting</a></button>
+<p></p>
+<div class="alert alert-secondary" role="alert">
+
+  Transaction Listing
+</div>
+<p></p>
+<table class="table" >
+<thead>
+
+</thead>
+  <tr>
+    <th scope="col">Transaction ID</th>
+    <th scope="col">Amount</th>
+    <th scope="col">Date</th>
+    <th scope="col">Credit/Debit</th>
+    <th scope="col">Currency</th>
+    <th scope="col">Narrative</th>
+
+
+  </tr>
+   <tbody>
+    <tr *ngFor="let transaction of transactionsObservable | async " >
+      <th>
+         {{transaction.id}}
+      </th>
+      <th>{{transaction.amount}}</th>
+      <th>{{transaction.transactionDate | date}}</th>
+      <th>{{transaction.transactionType}}</th>
+      <th>{{transaction.currency}}</th>
+      <th>{{transaction.narrative}}</th>
+
+    </tr>
+
+   </tbody>
+  </table>
